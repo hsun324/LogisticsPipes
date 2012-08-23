@@ -45,6 +45,7 @@ import net.minecraft.src.buildcraft.logisticspipes.PipeTransportLayer;
 import net.minecraft.src.buildcraft.logisticspipes.RouteLayer;
 import net.minecraft.src.buildcraft.logisticspipes.TransportLayer;
 import net.minecraft.src.buildcraft.logisticspipes.modules.ILogisticsModule;
+import net.minecraft.src.buildcraft.logisticspipes.modules.IWorldProvider;
 import net.minecraft.src.buildcraft.logisticspipes.modules.ModuleExtractor;
 import net.minecraft.src.buildcraft.logisticspipes.modules.ModuleItemSink;
 import net.minecraft.src.buildcraft.transport.IPipeTransportItemsHook;
@@ -54,7 +55,7 @@ import net.minecraft.src.krapht.AdjacentTile;
 import net.minecraft.src.krapht.Pair;
 import net.minecraft.src.krapht.WorldUtil;
 
-public abstract class CoreRoutedPipe extends Pipe implements IRequestItems, IAdjacentWorldAccess, ITrackStatistics {
+public abstract class CoreRoutedPipe extends Pipe implements IRequestItems, IAdjacentWorldAccess, ITrackStatistics, IWorldProvider {
 
 	protected enum ItemSendMode {
 		Normal,
@@ -342,5 +343,9 @@ public abstract class CoreRoutedPipe extends Pipe implements IRequestItems, IAdj
 		stat_session_recieved += count;
 		stat_lifetime_recieved += count;
 	}
-	
+
+	@Override
+	public World getWorld() {
+		return this.worldObj;
+	}
 }

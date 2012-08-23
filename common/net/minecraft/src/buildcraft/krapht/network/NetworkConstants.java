@@ -46,4 +46,6 @@ public class NetworkConstants {
 	public static final int DISK_DROP = 40;
 	public static final int DISK_MACRO_REQUEST = 41;
 	public static final int DISK_MACRO_REQUEST_RESPONSE = 42;
+	public static final int BEE_MODULE_SET_BEE = 43;
+	public static final int BEE_MODULE_CONTENT = 44;
 }
