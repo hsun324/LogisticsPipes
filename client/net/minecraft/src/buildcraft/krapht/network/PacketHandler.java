@@ -128,6 +128,7 @@ public class PacketHandler implements IPacketHandler {
 					final PacketItems packetP = new PacketItems();
 					packetP.readData(data);
 					handleMacroResponse(packetP);
+					break;
 				case NetworkConstants.BEE_MODULE_CONTENT:
 					final PacketModuleNBT packetQ = new PacketModuleNBT();
 					packetQ.readData(data);
